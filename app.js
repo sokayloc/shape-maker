@@ -8,8 +8,8 @@ function randomShape() {
   const sizeIdx = Math.floor(Math.random() * sizes.length);
   const shape = {
     color: colors[colorIdx],
-    size: sizes[sizeIdx]
-    type: types[typeIdx]
+    size: sizes[sizeIdx],
+    type: types[typeIdx],
 
   };
   return shape;
@@ -22,15 +22,18 @@ const shapes = [
 
 function render() {
   const html = shapes.map(function (shape) {
-    return `<div class='${shape.color} ${shape.size} ${shape.type}'></div>`;
+    return `<div class='${shape.color} ${shape.size} ${shape.type}'>
+    ${idx}</div>`;
   });
   container.innerHTML = html.join('');
 }
 
 render();
-setInterval(function () {
+const interval = setInterval(function () {
   const newShape = randomShape();
-  console.log(newShape);
   shapes.push(newShape);
   render();
+  if (shapes.length === 20) {
+    clearInterval(interval);
+  }
 }, 500);
