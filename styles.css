@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: space-around;
 }
-.container > div {
+
+.container>div {
   border: solid 1px black;
   margin: 1rem;
 }
@@ -22,6 +23,7 @@
 .md {
   width: 50px;
   height: 50px;
+  border-radius: ;
 }
 
 .red {
@@ -34,4 +36,8 @@
 
 .green {
   background-color: green;
+}
+
+.circle {
+  border-radius: 50%;
 }
